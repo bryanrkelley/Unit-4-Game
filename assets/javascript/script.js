@@ -9,35 +9,36 @@
         "33"
     ];
 
-    var counter, targetNumber, wins, losses;
+    var counter, targetNumber, wins, losses, crystalChoices;
 
-    var $reset = document.getElementById('reset');
+    var $reset=$("#reset")
 
 
     function startGame() {
 
-        // document.querySelector("#result").innerHTML = '';
-        // document.querySelector("#guesses").innerHTML = '';
-        // document.querySelector("#guessedLetters").innerHTML = '';
-        // document.querySelector("#word").innerHTML = '';
+        //document.querySelector("#result").innerHTML = '';
+        //document.querySelector("#guesses").innerHTML = '';
+        //document.querySelector("#guessedLetters").innerHTML = '';
+        //document.querySelector("#word").innerHTML = '';
 
         // Hide 'play again' button.
-        $reset.classList.add('hide');
+        $reset.addClass("hide")
 
         counter = 0;
         wins = 0;
         losses = 0;
 
-        // Pick a random word from our array.
-        targetNumber = targetNumbers[Math.floor(Math.random() * targetNumbers.length)]();
+        // Pick a random number from our array.
+        targetNumber = targetNumbers[Math.floor(Math.random() * targetNumbers.length)];
+        console.log(targetNumber);
 
-        $("#number-to-guess").innerHTML(targetNumber);
+        $("#number-to-guess").html(targetNumber);
 
-        document.querySelector("#word").innerHTML = "Press any key to guess an empty spot.  Be careful though!  You only get 9 chances before it is game over!";
+        // document.querySelector("#word").innerHTML = "DIRECTIONS!";
+        $("#word").html(targetNumber);
+
 
     }
-
-    // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
     // We begin by expanding our array to include four options.
     var numberOptions = [10, 5, 3, 7];
@@ -53,7 +54,7 @@
         imageCrystal.addClass("crystal-image");
 
         // Each imageCrystal will be given a src link to the crystal image
-        imageCrystal.attr(href="assets/images/Garnet.jpg");
+        imageCrystal.attr(href="#");
 
         // Each imageCrystal will be given a data attribute called data-crystalValue.
         // This data attribute will be set equal to the array value.
@@ -117,12 +118,11 @@
         // Replay game
         startGame();
     });
-
 })();
 
 
 // jQuery
-$(document).ready(function () {
+//Not needed since Javascript is at the bottom of the page
+// $(document).ready(function () {
 
-
-});
+// });

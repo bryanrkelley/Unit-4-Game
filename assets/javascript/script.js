@@ -1,25 +1,14 @@
 /*JavaScript*/
 (function () {
-    var targetNumbers = [
-        "53",
-        "14",
-        "25",
-        "76",
-        "48",
-        "33"
-    ];
-
     var counter, targetNumber, wins, losses, crystalChoices;
 
-    var $reset=$("#reset")
+    // create variables globally towards our application
+    var targetNumber = "";
+
+    var $reset = $("#reset")
 
 
     function startGame() {
-
-        //document.querySelector("#result").innerHTML = '';
-        //document.querySelector("#guesses").innerHTML = '';
-        //document.querySelector("#guessedLetters").innerHTML = '';
-        //document.querySelector("#word").innerHTML = '';
 
         // Hide 'play again' button.
         $reset.addClass("hide")
@@ -29,7 +18,8 @@
         losses = 0;
 
         // Pick a random number from our array.
-        targetNumber = targetNumbers[Math.floor(Math.random() * targetNumbers.length)];
+        // generate random target number
+        targetNumber = Math.floor((Math.random() * 120) + 19);
         console.log(targetNumber);
 
         $("#number-to-guess").html(targetNumber);
@@ -37,46 +27,28 @@
         // document.querySelector("#word").innerHTML = "DIRECTIONS!";
         $("#word").html(targetNumber);
 
+        console.log("your score: " + counter)
 
+        // generate random gem values
+        $("#gem-one").val(Math.floor((Math.random() * 12) + 1));
+        console.log("gem one value is: " + $("#Garnet").val());
+        $("#gem-two").val(Math.floor((Math.random() * 12) + 1));
+        console.log("gem two value is: " + $("#Amethyst").val());
+        $("#gem-three").val(Math.floor((Math.random() * 12) + 1));
+        console.log("gem three value is: " + $("#Pearl").val());
+        $("#gem-four").val(Math.floor((Math.random() * 12) + 1));
+        console.log("gem four value is: " + $("#Steven").val());
     }
 
-    // We begin by expanding our array to include four options.
-    var numberOptions = [10, 5, 3, 7];
-
-    // Next we create a for loop to create crystals for every numberOption.
-    for (var i = 0; i < numberOptions.length; i++) {
-
-        // For each iteration, we will create an imageCrystal
-        var imageCrystal = $("<img>");
-
-        // First each crystal will be given the class ".crystal-image".
-        // This will allow the CSS to take effect.
-        imageCrystal.addClass("crystal-image");
-
-        // Each imageCrystal will be given a src link to the crystal image
-        imageCrystal.attr(href="#");
-
-        // Each imageCrystal will be given a data attribute called data-crystalValue.
-        // This data attribute will be set equal to the array value.
-        imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
-        // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-        $("#crystals").append(imageCrystal);
-    }
 
     // This time, our click event applies to every single crystal on the page. Not just one.
     $(".crystal-image").on("click", function (updateNumberOfGuesses) {
 
-        // Determining the crystal's value requires us to extract the value from the data attribute.
-        // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-        // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-        // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
-
-        var crystalValue = ($(this).attr("data-crystalvalue"));
-        crystalValue = parseInt(crystalValue);
-        // We then add the crystalValue to the user's "counter" which is a global variable.
-        // Every click, from every crystal adds to the global counter.
-        counter += crystalValue;
+        // var crystalValue = ($(this).attr("data-crystalvalue"));
+        // crystalValue = parseInt(crystalValue);
+        // // We then add the crystalValue to the user's "counter" which is a global variable.
+        // // Every click, from every crystal adds to the global counter.
+        // counter += crystalValue;
 
         // Lose Logic
         if (counter >= targetNumber) {
@@ -126,3 +98,52 @@
 // $(document).ready(function () {
 
 // });
+
+
+
+
+
+
+
+
+
+
+// function playGame() {
+
+//     // add random gen values to your score
+//     $(".gem").on("click", function () {
+
+//         console.log(randomNumber);
+//         gemValue = parseInt($(this).val());
+//         yourScore = parseInt(yourScore + gemValue);
+//         $("#your-score").text(yourScore);
+//         console.log("your score in click: " + yourScore)
+
+//         // if your score equals the random number, you win and the game resets
+//         if (yourScore === randomNumber) {
+//             alert("you win!");
+//             yourWins++;
+//             $("#your-wins").text(yourWins);
+//             console.log("your wins: " + yourWins)
+//             yourScore = 0;
+//             // TODO: find a more efficient way of resetting the "yourScore." Why can't I get it to work in the gameSetup?
+//             $("#your-score").text(yourScore);
+//             initializeGame();
+//             console.log("your wins after initialize: " + yourWins)
+//         }
+
+//         // if your score exceeds the random number, you lose and the game resets
+//         if (yourScore > randomNumber) {
+//             alert("you lost");
+//             yourLosses++;
+//             $("#your-losses").text(yourLosses);
+//             console.log("your losses: " + yourLosses)
+//             yourScore = 0;
+//             $("#your-score").text(yourScore);
+//             initializeGame();
+//             console.log("your losses after intialize: " + yourLosses)
+
+//         }
+//     });
+
+// }

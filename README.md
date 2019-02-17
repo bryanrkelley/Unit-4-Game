@@ -1,31 +1,24 @@
-# unit-4-game
+# Crystal Collector
 
-Crystal Collector
+You must help the Crystal Gems save the world!  
 
-Watch the demo.
-
-The player will have to guess the answer, just like in Word Guess. This time, though, the player will guess with numbers instead of letters.
-
-Here's how the app works:
+Below is your mission briefing:
 
 There will be four crystals displayed as buttons on the page.
 
-The player will be shown a random number at the start of the game.
+You will be shown a random number at the start of the game.
 
-When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
+When you click on a crystal, it will add a specific amount of points to your total score.
 
-Your game will hide this amount until the player clicks a crystal.
-When they do click one, update the player's score counter.
-The player wins if their total score matches the random number from the beginning of the game.
+The game will hide this amount until you click a crystal.
+When you do click one, it will update your score counter.
+You win if their total score matches the random number from the beginning of the game.
 
-The player loses if their score goes above the random number.
+You lose if your score goes above the random number.
 
-The game restarts whenever the player wins or loses.
+The game restarts whenever you win or lose.
 
-When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
-The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+When the game begins again, you should see a new random number. Also, all the crystals will have four new hidden values. Of course, your score (and score counter) will reset to zero.
+The game should show the number of games you have won and lost. To that end, do not refresh the page as a means to restart the game.
 
-Option 1 Game design notes
-The random number shown at the start of the game should be between 19 - 120.
-
-Each crystal should have a random hidden value between 1 - 12.
+Check it out here: https://bryanrkelley.github.io/Unit-4-Game/
